@@ -1,0 +1,39 @@
+.App {
+  text-align: center;
+  width: 75%;
+  height: auto;
+  margin: auto;
+  background-color:#e3f2fd;
+  border: #bbdefb;
+  border: 1px;
+}
+
+.nav {
+  background-color: #90caf9;
+  height: 5vh;
+  font-size: 1.6vh;
+  font-family: fantasy;
+}
+
+.post {
+  background-color: #1e88e5 ;
+  text-align: left;
+  vertical-align: middle;
+  box-sizing: border-box; 
+  padding: 0.5% 5% 1% 5%;
+  margin-bottom: 4%;
+  margin-top: 1%;
+}
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
