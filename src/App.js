@@ -2,11 +2,11 @@ import React, {useState, useEffect} from 'react';
 import Popup from "reactjs-popup";
 import './App.css';
 
+
 const App = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    console.log("Effect suoritettiin.");
     getPosts();
   }, []);
 
@@ -16,7 +16,6 @@ const App = () => {
     );
     const data = await response.json();
     setPosts(data);
-    console.log(data);
   };
 
   return (
@@ -24,15 +23,9 @@ const App = () => {
       <div className="logo">
         <h1>SpämBüük</h1>
       </div>
-      <div  className="Test">
+      <div className="SecondBanner">
         <p className="biggerParagraph">Posts:</p>
-        <Popup trigger={<button className="newPostButton"> Make a new post</button>} modal closeOnDocumentClick>
-          <div className="NewPost">
-            <p>Please fill in the form and make a new post</p>
-            <UserForm updatePosts = {getPosts}></UserForm>
-            <form></form>
-          </div>
-        </Popup>
+        <UserForm updatePosts = {getPosts}></UserForm> 
       </div>
       
       {posts.map(post => (
@@ -55,15 +48,28 @@ const Post = ({user, title, content }) => {
 
 
 class UserForm extends React.Component {
+  /* Sources:
+  https://medium.com/@everdimension/how-to-handle-forms-with-just-react-ac066c48bd4f
+  https://blog.stvmlbrn.com/2017/04/07/submitting-form-data-with-react.html
+  */
   constructor() {
     super();
     this.state = {
       username: '',
       title: '',
       content: '',
+      open: false,
     };
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
+  openModal() {
+    this.setState({ open: true });
+  }
+  closeModal() {
+    this.setState({ open: false });
+  }
   onChange = (e) => {
     /*
       Because we named the inputs to match their
@@ -75,47 +81,78 @@ class UserForm extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
+    if (!e.target.checkValidity()) {
+      alert("Invalid data!")
+      return;
+    }
     // get our form data out of state
     const { username, title, content } = this.state;
     console.log({username, title, content});
-
+    
     fetch('/api/post', {
       method: 'POST',
       body:  JSON.stringify({username, title, content}),
       headers: {
         'Content-Type': 'application/json'
       }
+    }).then((response) => {
+      if (response.status === 406) {
+        alert("Your text content is too long. Character limit is 300 characters.")
+      }
     });
+    this.closeModal();
     this.props.updatePosts();
+    this.setState ( {
+      username: '',
+      title: '',
+      content: ''
+    });
+    
   }
 
   render() {
     const { username, title, content } = this.state;
+    /* Popup can be found here: https://www.npmjs.com/package/reactjs-popup */
     return (
-      <form onSubmit={this.onSubmit}>
-        <label htmlFor="username">Enter your username</label>
-        <input
-          type="text"
-          name="username"
-          value={username}
-          onChange={this.onChange}
-        />
-        <label htmlFor="title">Enter your post title</label>
-        <input
-          type="text"
-          name="title"
-          value={title}
-          onChange={this.onChange}
-        />
-        <label htmlFor="content">Enter your post content</label>
-        <input
-          type="text"
-          name="content"
-          value={content}
-          onChange={this.onChange}
-        />
-        <button type="submit" className="NewPostSubmitButton" >Submit</button>
-      </form>
+      <div>
+        <button className="newPostButton" onClick={this.openModal}>Make a new post</button>
+        <Popup
+          open={this.state.open}
+          
+          onClose={this.closeModal}
+        >
+          <p>Please fill in the form and make a new post</p>
+          <form onSubmit={this.onSubmit} noValidate>
+            <label htmlFor="username">Enter your username</label>
+            <input
+              type="text"
+              name="username"
+              value={username}
+              onChange={this.onChange}
+              required 
+            />
+            <label htmlFor="title">Enter your post title</label>
+            <input
+              type="text"
+              name="title"
+              value={title}
+              onChange={this.onChange}
+              required 
+            />
+            <label htmlFor="content">Enter your post content</label>
+            <textarea 
+              rows="4" 
+              cols="50"
+              type="text"
+              name="content"
+              value={content}
+              onChange={this.onChange}
+              required 
+            />
+            <button type="submit" className="NewPostSubmitButton" >Submit</button>
+          </form>
+        </Popup>
+      </div>
     );
   }
 }

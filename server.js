@@ -31,8 +31,12 @@ app.get("/api/posts", (req, res) => {
 
 app.post("/api/post", (req, res) => {
   let newpost = new Post(req.body.username, req.body.title, req.body.content);
-  console.log("Received new post:", JSON.stringify(newpost));
-  posts.unshift(newpost);
+  if(req.body.username.length > 0 && req.body.title.length > 0 && req.body.content.length < 300 && req.body.content.length > 0) {
+    console.log("Received new post:", JSON.stringify(newpost));
+    posts.unshift(newpost);
+  } else {
+    res.status(406);
+  }
   res.end();
 });
 
