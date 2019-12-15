@@ -30,9 +30,9 @@ app.get("/api/posts", (req, res) => {
 
 
 app.post("/api/post", (req, res) => {
-  let newpost = new Post(req.user, req.title, req.content);
-  console.log("Received new post:", req.body);
-  games.push(newpost);
+  let newpost = new Post(req.body.username, req.body.title, req.body.content);
+  console.log("Received new post:", JSON.stringify(newpost));
+  posts.unshift(newpost);
   res.end();
 });
 
