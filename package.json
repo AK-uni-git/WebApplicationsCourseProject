@@ -14,7 +14,7 @@
   },
   "proxy": "http://localhost:8080",
   "scripts": {
-    "start": "npm run build && node ./server.js localhost 8080",
+    "start": "npm run build && node ./src/server.js localhost 8080",
     "dev_start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

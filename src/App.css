@@ -8,7 +8,7 @@ p {
 
 .biggerParagraph {
   margin: 0.1vh;
-  font-size: 4vmin;
+  font-size: 3vw;
   text-shadow: 2px 2px 8px rgb(222, 243, 250);
 }
 
@@ -45,14 +45,15 @@ h1 {
 .post {
   margin: auto;
   width: 95%;
-  background-color: #218deb ;
+  background-color: rgb(55, 205, 255) ;
   text-align: left;
   vertical-align: middle;
   box-sizing: border-box; 
   padding: 0.5% 5% 1% 5%;
-  margin-bottom: 4%;
-  margin-top: 1%;
+  margin-bottom: 1.8vh;
+  margin-top: 1vh;
   box-shadow: 0.6vh 0.8vh 0.6vh rgba(39, 88, 121, 0.932);
+  overflow-wrap: break-word;
   
 }
 
@@ -66,9 +67,9 @@ h1 {
 }
 
 .newPostButton {
-  font-size: 3vmin;
-  width: 30vmin;
-  height: inherit;
+  font-size: 3.2vw;
+  width: 16vw;
+  height: auto;
   box-shadow: 0.5vh 0.5vh 0.5vh rgba(15, 27, 61, 0.534);
   background-color: deepskyblue;
   border-width: 0.1vh;
@@ -102,16 +103,16 @@ h1 {
 
 label, input {
   margin: 0 auto;
-  font-size: 2.5vw;
+  font-size: 2vw;
   display: block;
 }
 
 textarea {
-  max-width: 50vw;
+  width: 44vw;
   display: block;
   margin: 0 auto;
   font-size: 1.5vw;
 }
 input {
-  max-width: 50vw;
+  width: 44vw;
 }
