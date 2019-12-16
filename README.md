@@ -4,6 +4,8 @@
 
 Has been modified to build and deploy the project. It will first build the react front end to static files and then host the web applicaton with express server on localhost:8080.
 
+I made a new repository for submission version. Old can be found here: https://github.com/AK-uni-git/RahtiPoC
+
 
 
 ## 
