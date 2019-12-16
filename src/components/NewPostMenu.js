@@ -1,7 +1,7 @@
 import React from 'react';
 import Popup from "reactjs-popup";
 
-class NewPostMenu extends React.Component {
+class NewPostMenu  extends React.Component {
     /* Sources:
     https://medium.com/@everdimension/how-to-handle-forms-with-just-react-ac066c48bd4f
     https://blog.stvmlbrn.com/2017/04/07/submitting-form-data-with-react.html
@@ -43,17 +43,18 @@ class NewPostMenu extends React.Component {
       const { username, title, content } = this.state;
       //console.log({username, title, content});
       
-      fetch('/api/post', {
-        method: 'POST',
-        body:  JSON.stringify({username, title, content}),
-        headers: {
-          'Content-Type': 'application/json'
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "api/post", true);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function(e){
+          if (xhr.status === 406){
+            alert("Your text content is too long. Character limit is at 300 characters.");
+          } else if (!xhr.status === 200) {
+            console.error(xhr.statusText);
+          }
         }
-      }).then((response) => {
-        if (response.status === 406) {
-          alert("Your text content is too long. Character limit is 300 characters.")
-        }
-      });
+      xhr.send(JSON.stringify({username, title, content}));
+
       this.props.updatePosts();
       this.closeModal();
       

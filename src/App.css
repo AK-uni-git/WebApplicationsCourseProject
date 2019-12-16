@@ -66,9 +66,17 @@ h1 {
 
 }
 
+.SecondBanner {
+  display:  flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: stretch;
+}
+
 .newPostButton {
   font-size: 3.2vw;
-  width: 16vw;
+  width: 17vw;
   height: auto;
   box-shadow: 0.5vh 0.5vh 0.5vh rgba(15, 27, 61, 0.534);
   background-color: deepskyblue;
@@ -89,15 +97,6 @@ h1 {
   background-color: deepskyblue;
   border-width: 0.1vh;
   border-color: dodgerblue;
-}
-
-
-.SecondBanner {
-  display:  flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  align-items: stretch;
 }
 
 

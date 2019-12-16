@@ -11,12 +11,23 @@ const App = () => {
     getPosts();
   }, []);
 
+  
+
   const getPosts = async () => {
-    const response = await fetch(
-      "api/posts"
-    );
-    const data = await response.json();
-    setPosts(data);
+    /* https://medium.com/@catquarks/making-ajax-requests-with-react-48be0285d396 */
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "api/posts", true)
+      xhr.onload = function(e){
+        if (xhr.readyState === 4){
+          if (xhr.status === 200){
+            var data = JSON.parse(xhr.response);
+            setPosts(data);
+          } else {
+            console.error(xhr.statusText);
+          }
+        }
+      }
+      xhr.send();
   };
 
   return (
