@@ -4,7 +4,10 @@
 
 Has been modified to build and deploy the project. It will first build the react front end to static files and then host the web applicaton with express server on locahost:8080.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
+
+## This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
