@@ -1,0 +1,117 @@
+body {
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+}
+
+p {
+  font-size: 2vmin;
+}
+
+.biggerParagraph {
+  margin: 0.1vh;
+  font-size: 3vw;
+  text-shadow: 2px 2px 8px rgb(222, 243, 250);
+}
+
+h4, h3 {
+  font-size: 2.5vmin;
+  margin:0vh;
+  padding:0.1vh;
+}
+
+
+h1 {
+  font-size: 5vmin;
+  color: whitesmoke;
+  text-shadow: 2px 2px 8px rgb(62, 192, 231);
+  font-style: italic;
+  margin: 0vh;
+  padding:0vh;
+}
+.App {
+  text-align: center;
+  vertical-align: text-top;
+  width: 75%;
+  height: auto;
+  margin: auto;
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  border-color: #bbdefb;
+  border: 1px;
+  box-shadow: 0.6vh 1vh 0.6vh #888888;
+  padding: 0% 0% 0.5%;
+}
+
+
+
+.post {
+  margin: auto;
+  width: 95%;
+  background-color: rgb(55, 205, 255) ;
+  text-align: left;
+  vertical-align: middle;
+  box-sizing: border-box; 
+  padding: 0.5% 5% 1% 5%;
+  margin-bottom: 1.8vh;
+  margin-top: 1vh;
+  box-shadow: 0.6vh 0.8vh 0.6vh rgba(39, 88, 121, 0.932);
+  overflow-wrap: break-word;
+  
+}
+
+.logo {
+  background-color: #90caf9;
+  height: 5vh;
+  font-size: 1.6vh;
+  font-family: fantasy;
+  padding: 0.1% 0% 1% 0%;
+
+}
+
+.SecondBanner {
+  display:  flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.newPostButton {
+  font-size: 3.2vw;
+  width: 17vw;
+  height: auto;
+  box-shadow: 0.5vh 0.5vh 0.5vh rgba(15, 27, 61, 0.534);
+  background-color: deepskyblue;
+  border-width: 0.1vh;
+  border-color: dodgerblue;
+}
+.NewPost {
+  font-size: 3vh;
+  background-color: #CDDCDC;
+  background-image: radial-gradient(at 50% 100%, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), linear-gradient(to bottom, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%);
+  background-blend-mode: screen, overlay;
+}
+
+
+.NewPostSubmitButton {
+  font-size: 3vw;
+  box-shadow: 0.5vh 0.5vh 0.5vh rgba(15, 27, 61, 0.534);
+  background-color: deepskyblue;
+  border-width: 0.1vh;
+  border-color: dodgerblue;
+}
+
+
+label, input {
+  margin: 0 auto;
+  font-size: 2vw;
+  display: block;
+}
+
+textarea {
+  width: 44vw;
+  display: block;
+  margin: 0 auto;
+  font-size: 1.5vw;
+}
+input {
+  width: 44vw;
+}
