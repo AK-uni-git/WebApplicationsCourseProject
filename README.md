@@ -1,4 +1,4 @@
-## Web applications course project assigment. My goal was to learn basic React so I just made a super barebones backend with a working React front end. 
+## Web applications course project assignment. My goal was to learn basic React so I just made a super barebones backend with a working React front end. 
 
 ## To run simply do the following steps:
 
