@@ -1,10 +1,11 @@
-## Web applications course project assigment. Simple backend with react front end. 
+## Web applications course project assigment. My goal was to learn basic React so I just made a super barebones backend with a working React front end. 
 
-## `npm start`
+## To run simply do the following steps:
 
-Has been modified to build and deploy the project. It will first build the react front end to static files and then host the web applicaton with express server on localhost:8080.
+## 1. `npm install`
 
-I made a new repository for submitted version. So version history or commits can be found here: https://github.com/AK-uni-git/RahtiPoC
+## 2. `npm start`
+Has been modified to build and deploy the project. It will first build the react front end to static files and then host the web applicaton with the node.js express server on localhost:8080.
 
 
 
