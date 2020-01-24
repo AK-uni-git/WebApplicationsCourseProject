@@ -25,25 +25,13 @@ class NewPostMenu  extends React.Component {
       this.setState({ open: false });
     }
     onChange = (e) => {
-<<<<<<< HEAD
-      /*
-        Because we named the inputs to match their
-        corresponding values in state, it's
-        super easy to update the state
-      */
-=======
->>>>>>> project-a/master
       this.setState({ [e.target.name]: e.target.value });
     }
   
     onSubmit = (e) => {
       e.preventDefault();
       if (!e.target.checkValidity()) {
-<<<<<<< HEAD
-        alert("Invalid data!")
-=======
         alert("Invalid data! Form can't be empty.");
->>>>>>> project-a/master
         return;
       }
       // get our form data out of state
