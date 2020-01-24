@@ -2,9 +2,9 @@
 
 ## To run simply do the following steps:
 
-## 1. `npm install`
+1. `npm install`
 
-## 2. `npm start`
+2. `npm start`
 Has been modified to build and deploy the project. It will first build the react front end to static files and then host the web applicaton with the node.js express server on localhost:8080.
 
 
